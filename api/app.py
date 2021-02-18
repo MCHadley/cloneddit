@@ -1,4 +1,5 @@
 from flask import Flask
+import jsonify
 
 app = Flask(__name__)
 
@@ -6,5 +7,7 @@ app = Flask(__name__)
 def hello():
    return 'Hello, you are connected!'
 
-if __name__ == '__main__':
-    app.run()
+@app.route('/newpost')
+def newpost():
+   return None
+
