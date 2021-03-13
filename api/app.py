@@ -17,9 +17,7 @@ def new_subr():
   body = request.get_json()
   current_time = datetime.datetime.now()
   new_sub = Subreddit(**body, date_created=current_time)
-  return {'name': str(new_sub.name),
-  'date_created': str(new_sub.date_created)
-  }, 200
+  return {'name': str(new_sub.name), 'date_created': str(new_sub.date_created)}, 200
 
 @app.route('/users/new', methods=['POST'])
 def new_user():
