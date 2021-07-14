@@ -26,7 +26,6 @@ def new_user():
    current_time = str(datetime.datetime.now())
    userid = str(uuid.uuid1())
    new_user = User(**body, uid=userid, date_created=current_time)
-   # return {'user': str(new_user.username)}, 200
    response = db.users_table.put_item(
       Item = {
          'uid': new_user.uid,
